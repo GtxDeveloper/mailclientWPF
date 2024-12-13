@@ -1,0 +1,70 @@
+﻿<Window x:Class="MailClientWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MailClientWpfApp"
+        mc:Ignorable="d"
+        Title="SMTP Cliqnt" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File" FontSize="20" FontFamily="a_Algerius">
+                <MenuItem Header="Exit" FontSize="20" FontFamily="a_Algerius"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Tools" FontSize="20" FontFamily="a_Algerius">
+                <MenuItem Header="Options" FontSize="20" FontFamily="a_Algerius"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1" Background="Bisque" Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60*"></ColumnDefinition>
+                <ColumnDefinition Width="107*"></ColumnDefinition>
+                <ColumnDefinition Width="60*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" FontSize="20" FontFamily="a_Algerius" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Reciever:</Label>
+            <TextBox FontSize="14" FontFamily="a_Algerius" x:Name="TextBox_Reciever" Grid.Row="0" Grid.Column="1" Margin="5"></TextBox>
+            <Label  Grid.Row="1" FontSize="14" FontFamily="a_Algerius" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Theme:</Label>
+            <TextBox FontSize="20" FontFamily="a_Algerius" x:Name="TextBox_Theme" Grid.Row="1" Grid.Column="1" Margin="5"></TextBox>
+            <Label Grid.Row="2" FontSize="20" FontFamily="a_Algerius" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">File's:</Label>
+            <TextBox FontSize="14" FontFamily="a_Algerius" x:Name="TextBox_Message" Grid.Row="3" Grid.ColumnSpan="2" Margin="5"></TextBox>
+            <Button x:Name="Button_SendMessage" Grid.Column="1" Grid.Row="4" Margin="5" FontSize="20" FontFamily="a_Algerius" Click="Button_SendMessage_Click">Send Message</Button>
+            <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="5" Margin="5" Background="Beige">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" FontSize="20" FontFamily="a_Algerius" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">SMTP Repeater</Label>
+                <Label Grid.Row="1" FontSize="20" FontFamily="a_Algerius" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">Email:</Label>
+                <TextBox x:Name="TextBox_Repeater" Grid.Row="2" Margin="5" FontSize="14" FontFamily="a_Algerius"></TextBox>
+                <Label Grid.Row="3" FontSize="20" FontFamily="a_Algerius" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">Password:</Label>
+                <PasswordBox x:Name="PasswordBox_Repeater" Grid.Row="4" Margin="5" FontSize="14" FontFamily="a_Algerius"></PasswordBox>
+                <Label Grid.Row="5" FontSize="20" FontFamily="a_Algerius" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">Port:</Label>
+                <TextBox x:Name="TextBox_Port" Grid.Row="6" Margin="5" FontSize="20" FontFamily="a_Algerius">587</TextBox>
+            </Grid>
+        </Grid>
+        
+        <StatusBar Grid.Row="2">
+            <StatusBarItem x:Name="StatusBarItem_Info" Content="Ready" FontSize="14" FontFamily="a_Algerius"></StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
